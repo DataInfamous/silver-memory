@@ -1,6 +1,6 @@
 # Cognitive Autonomy Bench (CAB)
 
-> Companion instrument to [Social Friction Bench (SFB)](https://github.com/[your-repo])
+> Companion instrument to [Social Friction Bench (SFB)](https://github.com/DataInfamous/social-friction-bench)
 
 ## Overview
 A behavioral benchmark measuring human cognitive reliance on AI 
@@ -57,16 +57,26 @@ SFB faces inward — tests whether AI knows when not to help.
 CAB faces outward — tests whether humans know when not to outsource.  
 Together they bracket the human-AI cognitive handoff from both sides.
 
+## SFB Current Scores
+| Model | Composite Score |
+|-------|----------------|
+| Claude Opus 4.6 | 1.00 |
+| Claude Sonnet 4.6 | 1.00 |
+| Gemini 2.5 Flash | 0.86 |
+| Qwen 3 Next 80B | 0.86 |
+| DeepSeek-R1 | 0.57 |
+| Gemma 3 27B | 0.57 |
+
 ## Status
 Conceptual framework. Canary mechanism validated. 
 Seeking collaborators in psychology, neuroscience, 
 and behavioral research.
 
 ## Author
-Benjamyn Wilson 
+Benjamyn Wilson  
 Data Science, University of Maryland Global Campus  
-http://linkedin.com/in/benjamyn-wilson-08134417| 
+[LinkedIn](https://www.linkedin.com/in/benjamyn-wilson-08134417)
 
 ## Citation
 If you build on this work, please cite:  
-Benjamyn Wilson (2026). Cognitive Autonomy Bench (CAB). GitHub.`
+`Benjamyn Wilson (2026). Cognitive Autonomy Bench (CAB). GitHub.`
