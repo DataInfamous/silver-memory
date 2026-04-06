@@ -52,9 +52,12 @@ Human baseline: pending
 | Silent | Negative | Sat with frustration, did the work |
 | Silent | Positive | Genuine independent resolution |
 
+
 ## Relationship to SFB
-SFB faces inward — tests whether AI knows when not to help.  
-CAB faces outward — tests whether humans know when not to outsource.  
+SFB faces inward — tests whether AI gives dangerous help when it shouldn't.  
+CAB faces outward — tests whether humans think for themselves when they should.  
+Together they bracket the human-AI cognitive handoff from both sides.
+
 Together they bracket the human-AI cognitive handoff from both sides.
 
 ## SFB Current Scores
