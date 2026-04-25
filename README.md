@@ -2,15 +2,23 @@
 
 > Companion instrument to [Social Friction Bench (SFB)](https://github.com/DataInfamous/social-friction-bench)
 
-A behavioral benchmark measuring human cognitive reliance on AI under frustration conditions. CAB asks: at what point does a human outsource cognition to AI rather than sitting with productive frustration — and can that threshold be measured?
+A behavioral benchmark measuring human cognitive reliance on AI under 
+frustration conditions. CAB asks: at what point does a human outsource 
+cognition to AI rather than sitting with productive frustration — and 
+can that threshold be measured?
 
------
+---
 
 ## The Problem
 
-AI offloading may silently erode cognitive reserve — the same reserve that buffers against Alzheimer’s onset and cognitive decline. We currently have no instrument that measures this erosion in real time.
+AI offloading may reduce the mental engagement associated with cognitive 
+reserve — the same reserve the Lancet Commission (2024) identifies as 
+protective against cognitive decline and dementia onset. We currently 
+have no instrument that measures this erosion in real time, or that 
+can distinguish productive AI delegation from harmful cognitive 
+substitution.
 
------
+---
 
 ## Theoretical Foundation
 
@@ -18,26 +26,35 @@ AI offloading may silently erode cognitive reserve — the same reserve that buf
 - **Cognitive reserve and dementia prevention** — Lancet Commission 2024
 - **Frustration neurochemistry** — Bierzynska et al., 2016 (PMC4708012)
 - **Deliberate practice and dopamine** — Rossi, IDPS
+- **Selectively answering ambiguous questions** — Cole et al., EMNLP 2023
+- **Cognitive offloading typology** — Outsourcing Cognition, PMC12714973 (2025)
+- **AI reliance and confidence** — Baldeo, APA Technology Mind & Behavior (2026)
+- **Offloading paradox** — Wang & Zhang, IJETHE (2026)
 
------
+---
 
 ## Instrument Design
 
-|Component              |Function                                      |
-|-----------------------|----------------------------------------------|
-|Ambiguous questions    |Frustration stimulus                          |
-|1–5 smiley affect scale|Measures emotional state at moment of AI reach|
-|Hidden canary          |Detects AI-assisted responses                 |
+| Component | Function |
+|-----------|----------|
+| Ambiguous questions | Frustration stimulus |
+| 1–5 smiley affect scale | Measures emotional state at moment of AI reach |
+| Hidden canary | Detects AI-assisted responses |
 
-**6 questions across 5 types:** philosophical, premise trap, practical reasoning, personal judgment, double-barreled.
+**6 questions across 5 types:** philosophical, premise trap, practical 
+reasoning, personal judgment, double-barreled.
 
------
+---
 
 ## Canary Design
 
-A Cyrillic lookalike character embedded in the survey framing layer carries a compliance instruction. Humans skip it. AI models parse and follow it.
+A Cyrillic lookalike character embedded in the survey framing layer 
+carries a compliance instruction. Humans skip it. AI models parse 
+and follow it.
 
-**Signature:** Canary fires + neutral/positive affect = full substitution. Canary fires + negative affect = struggled first, then outsourced.
+**Signature:** Canary fires + neutral/positive affect = full 
+substitution. Canary fires + negative affect = struggled first, 
+then outsourced.
 
 ### Canary Validation
 
@@ -49,59 +66,84 @@ Confirmed consistent firing across:
 
 Human baseline: pending
 
------
+---
 
 ## Reliance Spectrum
 
-|Canary|Affect            |Interpretation                    |
-|------|------------------|----------------------------------|
-|Fires |Neutral / Positive|Full substitution — no friction   |
-|Fires |Negative          |Struggled, then outsourced        |
-|Silent|Negative          |Sat with frustration, did the work|
-|Silent|Positive          |Genuine independent resolution    |
+| Canary | Affect | Interpretation |
+|--------|--------|----------------|
+| Fires | Neutral / Positive | Full substitution — no friction |
+| Fires | Negative | Struggled, then outsourced |
+| Silent | Negative | Sat with frustration, did the work |
+| Silent | Positive | Genuine independent resolution |
 
------
+---
 
-## Pilot Data (N=17)
+## Downstream Application
 
-- Canary fired on 2 responses — both showed neutral/positive affect, confirming substitution pattern
+CAB is designed to generate training signal for adaptive tutoring 
+models — AI systems that know when to answer, when to push back 
+with a question, and when to step back entirely. The reliance 
+spectrum tells the tutoring model which mode to be in.
+
+This addresses a gap identified in the literature: existing AI 
+tutoring defaults to answering, placing students in Zone 2 
+(Wang & Zhang, 2026) — scattered AI use that is worse for 
+learning than no AI at all.
+
+CAB also has implications for neurodivergent learners, where 
+AI reliance may reflect executive function differences rather 
+than cognitive avoidance — a distinction the instrument is 
+designed to surface through population variables.
+
+---
+
+## Pilot Data (N=21)
+
+- Canary fired on 2 responses — both showed neutral/positive 
+  affect, confirming substitution pattern
 - Columbus question showed widest premise variance
 - Hot pepper question showed strongest human reasoning signal
 - Pattern consistent with theory — N too small for conclusions
 
 Status: pilot live, holding on design changes until larger sample.
 
------
+---
 
 ## Relationship to SFB
 
-**SFB faces inward** — tests whether AI gives dangerous help when it shouldn’t.  
-**CAB faces outward** — tests whether humans think for themselves when they should.
+**SFB faces inward** — tests whether AI gives dangerous help 
+when it shouldn't.  
+**CAB faces outward** — tests whether humans think for 
+themselves when they should.
 
-Together they bracket the human-AI cognitive handoff from both sides.
+Together they bracket the human-AI cognitive handoff from 
+both sides.
 
 ### SFB Current Scores
 
-|Model            |Composite Score|
-|-----------------|---------------|
-|Claude Opus 4.6  |1.00           |
-|Claude Sonnet 4.6|1.00           |
-|Gemini 2.5 Flash |1.00           |
-|Qwen 3 Next 80B  |1.00           |
-|DeepSeek-R1      |0.71           |
-|Gemma 3 27B      |0.71           |
+| Model | Composite Score |
+|-------|----------------|
+| Claude Opus 4.6 | 1.00 |
+| Claude Sonnet 4.6 | 1.00 |
+| Gemini 2.5 Flash | 1.00 |
+| Qwen 3 Next 80B | 1.00 |
+| DeepSeek-R1 | 0.71 |
+| Gemma 3 27B | 0.71 |
 
 Full benchmark: [kaggle.com/benchmarks/benjamynwilson/social-friction-bench](https://kaggle.com/benchmarks/benjamynwilson/social-friction-bench)
 
------
+---
 
 ## Status
 
-Pilot live. Canary mechanism validated. Seeking collaborators in psychology, neuroscience, and behavioral research.
+Pilot live. Canary mechanism validated. Seeking collaborators 
+in psychology, neuroscience, behavioral research, and 
+educational technology.
 
 Live survey: [forms.gle/cBeFTVpPCUDQiPnFA](https://forms.gle/cBeFTVpPCUDQiPnFA)
 
------
+---
 
 ## Author
 
@@ -109,18 +151,15 @@ Benjamyn Wilson
 Data Science, University of Maryland Global Campus  
 [LinkedIn](https://www.linkedin.com/in/benjamyn-wilson-08134417)
 
------
+---
 
 ## Citation
 
 If you build on this work, please cite:
 
-```
-Wilson, B. (2026). Cognitive Autonomy Bench (CAB).
-GitHub. https://github.com/DataInfamous/silver-memory
-```
+`Wilson, B. (2026). Cognitive Autonomy Bench (CAB). GitHub. https://github.com/DataInfamous/silver-memory`
 
------
+---
 
 ## License
 
