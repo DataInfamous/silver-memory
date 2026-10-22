@@ -136,6 +136,24 @@ python tests/test_cognitive_throttle.py  # 19 checks, no dependencies
 # or: python -m pytest tests/
 ```
 
+### The ds-tutor fork
+
+[`ds_tutor.py`](ds_tutor.py) is the data-science-scoped fork of the same
+engine — an independent copy, deliberately not kept in sync. It differs
+in exactly two places: a **topic gate** (it activates only on
+data-science / coursework questions — statistics, ML, data work, SQL —
+and stays inactive outside that scope), and the **pitfall set**, which
+is the data-science one instead of the general list: p-hacking,
+mishandled censoring, unchecked proportional-hazards assumptions, and
+misread Kaplan-Meier curves. Its Priority-0 override, reliance triage,
+and shift levers behave exactly as above, and topic stickiness keeps a
+study session in scope so short follow-ups are still protected.
+
+```bash
+python ds_tutor.py                       # scripted demo, incl. the gate
+python tests/test_ds_tutor.py            # 14 checks, no dependencies
+```
+
 ---
 
 ## Pilot Data (N=21)
