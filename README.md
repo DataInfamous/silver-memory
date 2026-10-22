@@ -98,6 +98,46 @@ designed to surface through population variables.
 
 ---
 
+## Reference Implementation: Cognitive Throttle
+
+The downstream application above has a reference implementation in this
+repo: [`cognitive_throttle.py`](cognitive_throttle.py) — the
+adaptive-tutoring policy CAB is designed to inform, written as plain,
+dependency-free Python.
+
+CAB reads reliance from canary × affect after the fact. The throttle reads
+the same spectrum live — attempt shown × frustration — and answers it with
+a response mode:
+
+| Attempt | Frustration | Mode |
+|---------|-------------|------|
+| No  | No  | Push back first — one question pointing at the concept |
+| No  | Yes | Scaffold — the smallest unblocking piece |
+| Yes | Yes | Encourage + light hint — protect the productive struggle |
+| Yes | No  | Verify only — confirm or gently correct |
+
+Above the table sits a **Priority-0 override**: burnout and
+executive-dysfunction signals (exhaustion language, a fragmentation
+drop-off in message length, a pressured repeat request, a severe
+first-step stall) remove all friction — direct answer, one action, no
+nudges — because genuine incapacity is never overreliance. The user can
+also move the throttle directly with **"shift up" / "shift down"**
+levers, and explicit overrides ("just tell me", time pressure, factual
+lookups, repeated questions) always answer directly. A "don't know where
+to start" block is read as a structural scaffolding need, not avoidance.
+
+The signal detectors are transparent keyword/structure heuristics — in
+production the same signals are read from the conversation itself. Here
+they are explicit so the policy can be tested and argued with:
+
+```bash
+python cognitive_throttle.py             # scripted demo conversation
+python tests/test_cognitive_throttle.py  # 19 checks, no dependencies
+# or: python -m pytest tests/
+```
+
+---
+
 ## Pilot Data (N=21)
 
 - Canary fired on 2 responses — both showed neutral/positive 
